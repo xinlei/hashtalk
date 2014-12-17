@@ -4,6 +4,19 @@
     <input type= "submit">
 <% end %>
 
-<% @list.each do |item| %>
-    <p><%=item[:id]%> <%=item[:value]%></p>
+<% for item in @list %>
+    <% for str in item[:value].split %>
+        <% if str =~ /#\w+/ %>
+            <span class='hash_link'><%=str%></span>
+        <% else %>
+            <%=str%>
+        <% end %>
+    <% end %>
+    <br>
+<% end %>
+
+<div id='staging_area'></div>
+
+<%= form_tag("index", method: "get", id: 'search_form') do %>
+    <%= submit_tag("Search") %>
 <% end %>

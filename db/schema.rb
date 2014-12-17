@@ -31,16 +31,16 @@ ActiveRecord::Schema.define(version: 20141217122913) do
     t.datetime "updated_at"
   end
 
+  create_table "hashtags_tiks", id: false, force: true do |t|
+    t.integer "tik_id"
+    t.integer "hashtag_id"
+  end
+
   create_table "tiks", force: true do |t|
     t.integer  "user_id"
     t.text     "value"
     t.datetime "created_at"
     t.datetime "updated_at"
-  end
-
-  create_table "tiks_hashtags", id: false, force: true do |t|
-    t.integer "tik_id"
-    t.integer "hashtag_id"
   end
 
   create_table "users", force: true do |t|
