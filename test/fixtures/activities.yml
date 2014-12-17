@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 
+  tik_id: 
+  upvote: 1
+  downvote: 1
+
+two:
+  user_id: 
+  tik_id: 
+  upvote: 1
+  downvote: 1

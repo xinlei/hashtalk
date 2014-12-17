@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tik_id: 
+  value: MyString
+
+two:
+  tik_id: 
+  value: MyString
