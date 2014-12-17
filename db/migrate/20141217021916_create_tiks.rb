@@ -1,7 +1,7 @@
 class CreateTiks < ActiveRecord::Migration
   def change
     create_table :tiks do |t|
-      t.references :user, index: true
+      t.belongs_to :user
       t.text :value
 
       t.timestamps

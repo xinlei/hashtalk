@@ -1,8 +1,8 @@
 class CreateActivities < ActiveRecord::Migration
   def change
     create_table :activities do |t|
-      t.references :user, index: true
-      t.references :tik, index: true
+      t.belongs_to :user
+      t.belongs_to :tik
       t.integer :upvote
       t.integer :downvote
 

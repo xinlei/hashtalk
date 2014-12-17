@@ -25,17 +25,11 @@ ActiveRecord::Schema.define(version: 20141217022051) do
     t.datetime "updated_at"
   end
 
-  add_index "activities", ["tik_id"], name: "index_activities_on_tik_id", using: :btree
-  add_index "activities", ["user_id"], name: "index_activities_on_user_id", using: :btree
-
   create_table "hashtags", force: true do |t|
-    t.integer  "tik_id"
     t.string   "value"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  add_index "hashtags", ["tik_id"], name: "index_hashtags_on_tik_id", using: :btree
 
   create_table "tiks", force: true do |t|
     t.integer  "user_id"
@@ -43,8 +37,6 @@ ActiveRecord::Schema.define(version: 20141217022051) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  add_index "tiks", ["user_id"], name: "index_tiks_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "username"

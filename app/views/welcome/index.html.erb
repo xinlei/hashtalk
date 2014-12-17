@@ -1,7 +1,9 @@
 <h1>hello world!</h1>
 <%= form_tag do %>
-  <div>
-    <textarea rows= 5 class="form-control" id="post_field" placeholder="What's happening?"></textarea>
-  </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
+    <textarea id="message" name="message" cols="24" rows="6"></textarea>
+    <input type= "submit">
+<% end %>
+
+<% @list.each do |item| %>
+    <p><%=item%></p>
 <% end %>

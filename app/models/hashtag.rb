@@ -1,3 +1,3 @@
 class Hashtag < ActiveRecord::Base
-  belongs_to :tik
+  has_and_belongs_to_many :tik
 end

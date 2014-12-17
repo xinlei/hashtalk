@@ -2,7 +2,10 @@ Rails.application.routes.draw do
 
   get 'welcome/index'
 
+  post 'welcome/index' => 'welcome#post'
+
   root 'welcome#index'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
