@@ -15,8 +15,12 @@
     <br>
 <% end %>
 
-<div id='staging_area'></div>
-
 <%= form_tag("index", method: "get", id: 'search_form') do %>
+    <%= label_tag(:q, "Add to search list:") %>
+    <%= text_field_tag(:q) %>
     <%= submit_tag("Search") %>
 <% end %>
+
+<div id='staging_area'>
+  <h1>Search List</h1>
+</div>
