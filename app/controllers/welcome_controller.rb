@@ -2,8 +2,7 @@ class WelcomeController < ApplicationController
 
   # Display a collection of tiks, already sorted by ranking
   def index
-
-    @list = Tik.get(params[:query])
+    @tiks = Tik.get(params[:query])
   end
 
   # Store the new tik after parsing for hashtags

@@ -1,0 +1,10 @@
+<% for item in @tiks %>
+    <% for str in item[:value].split %>
+        <% if str =~ /#\w+/ %>
+            <span class='hash_link'><%=str%></span>
+        <% else %>
+            <%=str%>
+        <% end %>
+    <% end %>
+    <br>
+<% end %>

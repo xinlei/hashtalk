@@ -1,7 +1,10 @@
 class SearchController < ApplicationController
   def create
-
-    session[:list] = Tik.get(input)
-    redirect :welcome_index_url
+    puts 'in searchController'
+    @tiks = Tik.get(params[:query])
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 end

@@ -4,18 +4,11 @@
     <input type= "submit">
 <% end %>
 
-<% for item in @list %>
-    <% for str in item[:value].split %>
-        <% if str =~ /#\w+/ %>
-            <span class='hash_link'><%=str%></span>
-        <% else %>
-            <%=str%>
-        <% end %>
-    <% end %>
-    <br>
-<% end %>
+<div id="search_results">
+    <%= render 'tiks/tiks', :tiks => @tiks %>
+</div>
 
-<%= form_tag("index", method: "get", id: 'search_form') do %>
+<%= form_tag("index", method: "get", id: 'add_form') do %>
     <%= label_tag(:q, "Add to search list:") %>
     <%= text_field_tag(:q) %>
     <%= submit_tag("Search") %>
@@ -24,3 +17,8 @@
 <div id='staging_area'>
   <h1>Search List</h1>
 </div>
+
+<%= form_tag('/search', method: "post", id: 'search_form', format: :json, remote: true) do %>
+    <%= submit_tag("Search") %>
+<% end %>
+
