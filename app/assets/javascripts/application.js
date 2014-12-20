@@ -15,14 +15,18 @@
 //= require turbolinks
 //= require_tree .
 
-function clear(){
-    alert('clear!');
+function remove_me() {
+    $('#search_term').click(function (elem) {
+        $(elem.target).remove();
+
+        //TODO: remove from hidden field
+    });
 }
 
 function add_to_staging_area(elem){
     var hashtag = elem;
     var staging_area = document.getElementById('staging_area');
-    staging_area.innerHTML = staging_area.innerHTML + hashtag.innerHTML + '<br>';
+    staging_area.innerHTML = staging_area.innerHTML + '<p id="search_term" onclick="remove_me()">'+hashtag.innerHTML+'</p>';
     var form = document.getElementById('search_form');
     var input = document.createElement('input');
     input.type = 'hidden';
