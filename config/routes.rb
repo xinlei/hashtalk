@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   root 'welcome#index'
 
+  delete 'search' => 'search#delete'
+
   resources :search
 
   # The priority is based upon order of creation: first created -> highest priority.

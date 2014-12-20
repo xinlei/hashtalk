@@ -15,18 +15,18 @@
 //= require turbolinks
 //= require_tree .
 
-function installClickListener(){
-    var hashtags = document.getElementsByClassName("hash_link");
-    for (var i = 0; i < hashtags.length; i++){
-        hashtags[i].onclick = function() {
-            var staging_area = document.getElementById('staging_area');
-            staging_area.innerHTML = staging_area.innerHTML + this.innerHTML + '<br>';
-            var form = document.getElementById('search_form');
-            var input = document.createElement('input');
-            input.type = 'hidden';
-            input.name = 'query[]';
-            input.value = this.innerHTML;
-            form.appendChild(input)
-        }
-    }
+function clear(){
+    alert('clear!');
+}
+
+function add_to_staging_area(elem){
+    var hashtag = elem;
+    var staging_area = document.getElementById('staging_area');
+    staging_area.innerHTML = staging_area.innerHTML + hashtag.innerHTML + '<br>';
+    var form = document.getElementById('search_form');
+    var input = document.createElement('input');
+    input.type = 'hidden';
+    input.name = 'query[]';
+    input.value = hashtag.innerHTML;
+    form.appendChild(input)
 }

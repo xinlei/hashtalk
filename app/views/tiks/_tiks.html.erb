@@ -1,7 +1,7 @@
 <% for item in @tiks %>
     <% for str in item[:value].split %>
         <% if str =~ /#\w+/ %>
-            <span class='hash_link'><%=str%></span>
+            <span class='hash_link' onclick="add_to_staging_area(this)"><%=str%></span>
         <% else %>
             <%=str%>
         <% end %>

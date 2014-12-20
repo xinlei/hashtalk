@@ -12,6 +12,7 @@ class Tik < ActiveRecord::Base
   end
 
   def self.get(params)
+    puts 'params for get'
     tiks = nil
     if params.nil?
       tiks = Tik.all
@@ -21,9 +22,12 @@ class Tik < ActiveRecord::Base
         input << param[1..param.length]
       end
 
+      puts input
+      puts input.length
+
       tiks = Tik.joins(:hashtags).select("tiks.id, tiks.value").where("hashtags.value = ?", input[0])
-      for i in 1..input.length
-        if input.length > 1
+      if input.length > 1
+        for i in 1..input.length - 1
           temp = Tik.joins(:hashtags).select("tiks.id, tiks.value").where("hashtags.value = ?", input[i])
           tiks.merge(temp)
         end

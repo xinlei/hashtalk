@@ -14,11 +14,16 @@
     <%= submit_tag("Search") %>
 <% end %>
 
+<h1>Search List</h1>
 <div id='staging_area'>
-  <h1>Search List</h1>
 </div>
 
 <%= form_tag('/search', method: "post", id: 'search_form', format: :json, remote: true) do %>
     <%= submit_tag("Search") %>
 <% end %>
 
+<br>
+
+<%= form_tag('/search', method: "delete", id: 'delete_form') do %>
+    <%= submit_tag("Delete") %>
+<% end %>
