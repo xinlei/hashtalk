@@ -18,8 +18,8 @@
 function remove_me() {
     $('#search_term').click(function (elem) {
         $(elem.target).remove();
-
-        //TODO: remove from hidden field
+        var elem_string = 'input[value="' + this.innerHTML + '"]'
+        $(elem_string).remove();
     });
 }
 
