@@ -13,3 +13,43 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+  margin: 0;
+  border-collapse: collapse;
+  border: none;
+}
+
+#header {
+  width: 100%;
+  background-color: darkmagenta;
+}
+
+#app_name {
+  color: white;
+  padding: 30px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 30px;
+}
+
+#main {
+  font-family: 'Bitter', serif;
+  margin-top: 30px;
+  left: 15%;
+  width: 400px;
+  position: absolute;
+}
+
+#input_table {
+  border: 1px solid #CCCCCC;
+  padding: 5px;
+  margin-bottom: 20px;
+}
+
+.tik_single {
+  border-top: thin;
+}
+
+.align_right {
+  text-align: right;
+}

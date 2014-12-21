@@ -1,12 +1,26 @@
-<h1>hello world!</h1>
-<%= form_tag do %>
-    <textarea id="message" name="message" cols="24" rows="6"></textarea>
-    <input type= "submit">
-<% end %>
+<div id="main">
+  <div id="input_area">
+    <table id="input_table">
+      <tr>
+        <td>
+          <%= form_tag do %>
+              <textarea id="message" name="message" cols="50" rows="6"></textarea>
+        </td>
+              </tr>
+              <tr>
+                <td class="align_right">
+                  <input type= "submit" value="Post" class="btn btn-default">
+                </td>
+              </tr>
+          <% end %>
+    </table>
+  </div>
+  <div id="display_area">
+    <div id="search_results">
+        <%= render 'tiks/tiks', :tiks => @tiks %>
+    </div>
+  </div>
 
-<div id="search_results">
-    <%= render 'tiks/tiks', :tiks => @tiks %>
-</div>
 
 <%= form_tag("index", method: "get", id: 'add_form') do %>
     <%= label_tag(:q, "Add to search list:") %>
@@ -27,3 +41,4 @@
 <%= form_tag('/search', method: "delete", id: 'delete_form') do %>
     <%= submit_tag("Delete") %>
 <% end %>
+</div>

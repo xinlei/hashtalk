@@ -1,10 +1,12 @@
 <% for item in @tiks %>
-    <% for str in item[:value].split %>
-        <% if str =~ /#\w+/ %>
-            <span class='hash_link' onclick="add_to_staging_area(this)"><%=str%></span>
-        <% else %>
-            <%=str%>
+    <div class="tik_single">
+        <% for str in item[:value].split %>
+            <% if str =~ /#\w+/ %>
+                <span class='hash_link' onclick="add_to_staging_area(this)"><%=str%></span>
+            <% else %>
+                <%=str%>
+            <% end %>
         <% end %>
-    <% end %>
+    </div>
     <br>
 <% end %>

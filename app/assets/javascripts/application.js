@@ -15,6 +15,7 @@
 //= require turbolinks
 //= require_tree .
 
+
 function remove_me(elem) {
     $(elem).click(function () {
         $(elem).remove();
