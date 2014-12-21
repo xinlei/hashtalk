@@ -15,10 +15,10 @@
 //= require turbolinks
 //= require_tree .
 
-function remove_me() {
-    $('#search_term').click(function (elem) {
-        $(elem.target).remove();
-        var elem_string = 'input[value="' + this.innerHTML + '"]'
+function remove_me(elem) {
+    $(elem).click(function () {
+        $(elem).remove();
+        var elem_string = 'input[value="' + elem.innerHTML + '"]'
         $(elem_string).remove();
     });
 }
@@ -26,7 +26,7 @@ function remove_me() {
 function add_to_staging_area(elem){
     var hashtag = elem;
     var staging_area = document.getElementById('staging_area');
-    staging_area.innerHTML = staging_area.innerHTML + '<p id="search_term" onclick="remove_me()">'+hashtag.innerHTML+'</p>';
+    staging_area.innerHTML = staging_area.innerHTML + '<p id="search_term" onclick="remove_me(this)">'+hashtag.innerHTML+'</p>';
     var form = document.getElementById('search_form');
     var input = document.createElement('input');
     input.type = 'hidden';
