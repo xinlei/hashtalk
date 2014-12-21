@@ -26,17 +26,25 @@ class Tik < ActiveRecord::Base
       puts input.length
 
       tiks = Tik.joins(:hashtags).select("tiks.id, tiks.value").where("hashtags.value = ?", input[0])
+      result = []
       if input.length > 1
-        for i in 1..input.length - 1
-          temp = Tik.joins(:hashtags).select("tiks.id, tiks.value").where("hashtags.value = ?", input[i])
-          tiks.merge(temp)
-        end
-      end
 
-      for tik in tiks do
-        puts tik[:value]
+        puts 'hi world'
+
+        for i in 1..input.length - 1
+          result << Tik.joins(:hashtags).select("tiks.id, tiks.value").where("hashtags.value = ?", input[i])
+        end
+
+        sql = tiks.to_sql
+
+        for i in 0..result.length - 1
+          sql = sql + " INTERSECT " + result[i].to_sql
+          puts i
+        end
+        Tik.find_by_sql sql
+      else
+        return tiks
       end
     end
-    return tiks
   end
 end
