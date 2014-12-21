@@ -36,6 +36,7 @@ function add_to_staging_area(elem){
     form.appendChild(input)
 }
 
+// Source: http://jsfiddle.net/timur/47a7A/
 $(document).ready(function() {
     var text_max = 240;
     $('#character_counter').html(text_max + ' characters remaining');

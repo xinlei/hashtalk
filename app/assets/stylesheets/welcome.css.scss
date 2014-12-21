@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .hash_link {
-  color: darkgreen;
+  color: palevioletred;
   display: inline;
 }
 
@@ -15,4 +15,9 @@
 h1 {
   color: darkmagenta;
   font-family: 'Montserrat', sans-serif;
+}
+
+.tik_single {
+  height: 60px;
+  border-bottom: 1px solid darkgrey;
 }

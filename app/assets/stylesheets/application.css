@@ -32,18 +32,16 @@ body {
   font-size: 30px;
 }
 
-#main {
+.container {
   font-family: 'Bitter', serif;
   margin-top: 30px;
-  left: 15%;
-  width: 400px;
-  position: absolute;
 }
 
 #input_table {
   border: 1px solid #CCCCCC;
   padding: 5px;
   margin-bottom: 20px;
+    width: 100%;
 }
 
 #input_table td {
@@ -58,3 +56,12 @@ body {
   text-align: right;
 }
 
+#search_title {
+    margin-top: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    color: darkmagenta;
+}
+
+#search_query {
+}

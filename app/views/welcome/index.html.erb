@@ -1,5 +1,5 @@
-<div id="main">
-  <div id="input_area">
+<div class="container"><div class="row"><div class="col-md-6">
+<div id="input_area">
     <table id="input_table">
       <tr>
         <td colspan="2">
@@ -19,25 +19,33 @@
         <%= render 'tiks/tiks', :tiks => @tiks %>
     </div>
   </div>
+</div>
 
+  <div class="col-md-4">
 
-<%= form_tag("index", method: "get", id: 'add_form') do %>
-    <%= label_tag(:q, "Add to search list:") %>
-    <%= text_field_tag(:q) %>
-    <%= submit_tag("Search") %>
+<div id="search_area">
+<%= form_tag("index", method: "get", id: 'add_form', class: "form-inline", role: "form") do %>
+  <div class="form-group"><input type="text" class="form-control" id="search_query" placeholder="Enter a hashtag"></div>
+  <button type="submit" class="btn btn-default">Search</button>
 <% end %>
-
-<h1>Search List</h1>
+</div>
+<p id="search_title">#Search #List<p>
 <div id='staging_area'>
 </div>
 
+    <table id="search_area_button">
+      <tr>
+        <td>
 <%= form_tag('/search', method: "post", id: 'search_form', format: :json, remote: true) do %>
-    <%= submit_tag("Search") %>
+    <%= submit_tag("Search", class: "btn btn-default") %>
 <% end %>
-
-<br>
-
+          </td>
+        <td>
 <%= form_tag('/search', method: "delete", id: 'delete_form') do %>
-    <%= submit_tag("Delete") %>
+    <%= submit_tag("Reset List", class: "btn btn-default") %>
 <% end %>
-</div>
+        </td>
+        </tr>
+      </table>
+  </div>
+</div></div></div>
