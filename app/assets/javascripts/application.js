@@ -35,3 +35,15 @@ function add_to_staging_area(elem){
     input.value = hashtag.innerHTML;
     form.appendChild(input)
 }
+
+$(document).ready(function() {
+    var text_max = 240;
+    $('#character_counter').html(text_max + ' characters remaining');
+
+    $('#message').keyup(function() {
+        var text_length = $('#message').val().length;
+        var text_remaining = text_max - text_length;
+
+        $('#character_counter').html(text_remaining + ' characters remaining');
+    });
+});

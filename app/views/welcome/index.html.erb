@@ -2,15 +2,14 @@
   <div id="input_area">
     <table id="input_table">
       <tr>
-        <td>
+        <td colspan="2">
           <%= form_tag do %>
-              <textarea id="message" name="message" cols="50" rows="6"></textarea>
+              <textarea class="form-control" id="message" name="message" cols="50" rows="5"></textarea>
         </td>
               </tr>
               <tr>
-                <td class="align_right">
-                  <input type= "submit" value="Post" class="btn btn-default">
-                </td>
+                <td id="character_counter"></td>
+                <td class="align_right"><button type= "submit" class="btn btn-default">Post</button></td>
               </tr>
           <% end %>
     </table>

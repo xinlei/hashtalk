@@ -46,6 +46,10 @@ body {
   margin-bottom: 20px;
 }
 
+#input_table td {
+    padding: 10px;
+}
+
 .tik_single {
   border-top: thin;
 }
@@ -53,3 +57,4 @@ body {
 .align_right {
   text-align: right;
 }
+
