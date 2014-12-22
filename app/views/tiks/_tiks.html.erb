@@ -1,5 +1,11 @@
 <% for item in @tiks %>
     <div class="tik_single">
+      <div class="btn-group-vertical btn-group-sm tik_btn" role="group">
+      <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-chevron-up"></span></button>
+      <button type="button" class="btn btn-default">1</button>
+      <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-chevron-down"></span></button>
+        </div>
+      <div class="tik_text"><p>
         <% for str in item[:value].split %>
             <% if str =~ /#\w+/ %>
                 <span class='hash_link' onclick="add_to_staging_area(this)"><%=str%></span>
@@ -7,6 +13,7 @@
                 <%=str%>
             <% end %>
         <% end %>
+        </p></div>
     </div>
     <br>
 <% end %>

@@ -22,13 +22,13 @@
 </div>
 
   <div class="col-md-4">
-
 <div id="search_area">
 <%= form_tag("index", method: "get", id: 'add_form', class: "form-inline", role: "form") do %>
   <div class="form-group"><input type="text" class="form-control" id="search_query" placeholder="Enter a hashtag"></div>
   <button type="submit" class="btn btn-default">Search</button>
 <% end %>
 </div>
+
 <p id="search_title">#Search #List<p>
 <div id='staging_area'>
 </div>
@@ -36,16 +36,18 @@
     <table id="search_area_button">
       <tr>
         <td>
-<%= form_tag('/search', method: "post", id: 'search_form', format: :json, remote: true) do %>
-    <%= submit_tag("Search", class: "btn btn-default") %>
-<% end %>
-          </td>
-        <td>
-<%= form_tag('/search', method: "delete", id: 'delete_form') do %>
-    <%= submit_tag("Reset List", class: "btn btn-default") %>
-<% end %>
+            <%= form_tag('/search', method: "post", id: 'search_form', format: :json, remote: true) do %>
+                <%= submit_tag("Search", class: "btn btn-default") %>
+            <% end %>
         </td>
-        </tr>
-      </table>
+        <td>
+            <%= form_tag('/search', method: "delete", id: 'delete_form') do %>
+                <%= submit_tag("Reset List", class: "btn btn-default") %>
+            <% end %>
+        </td>
+      </tr>
+    </table>
+
   </div>
-</div></div></div>
+    </div>
+</div>
